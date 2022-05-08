@@ -31,6 +31,14 @@
     background-color: #ffffff;
 }
 
+.doubleBranch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    height: 105px;
+}
+
 span {
     background-color: blueviolet;
     color: #ffffff;
@@ -51,6 +59,36 @@ p {
     height: 40px;
     width: 2px;
     background-color: #ffffff;
+}
+
+.horizLine {
+    width: 200px;
+    height: 2px;
+    background-color: #ffffff;
+}
+
+.sLine {
+    position: absolute;
+    left: 0;
+    top: 40px;
+}
+
+.tLine {
+    position: absolute;
+    right: 0;
+    top: 40px;
+}
+
+.image1 {
+    position: absolute;
+    top: 80px;
+    left: -10px;
+}
+
+.image2 {
+    position: absolute;
+    top: 80px;
+    right: -10px;
 }
 
 .delete {
