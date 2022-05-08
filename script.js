@@ -6,6 +6,7 @@ const mainContainer = document.querySelector('.mainContainer')
 // const mainImage = document.querySelector('.mainImage')
 const vertical = document.createElement('div').classList.add('verticalLine')
 
+
 const addEvent = () => {
     console.log(' addEvent working')
     const div = document.createElement('div')
@@ -22,14 +23,14 @@ const addEvent = () => {
     image.src = "./icons/add_circle_white_24dp.svg"
     image.classList.add('add')
     image.addEventListener('click', options)
-    
+
     const delBtn = document.createElement('img')
     delBtn.src = "./icons/delete_white_24dp.svg"
     delBtn.classList.add('delete')
     delBtn.classList.add('hidden')
     delBtn.addEventListener('click', () => {
         delBtn.parentElement.remove()
-    } )
+    })
     div.addEventListener('mouseover', () => {
         delBtn.classList.remove('hidden')
     })
@@ -47,6 +48,8 @@ const addEvent = () => {
 
 const addSecEvent = () => {
     console.log('working')
+    let leftTop = 105;
+    let rightTop = 105;
     const div = document.createElement('div')
     div.classList.add('doubleBranch')
     const fLine = document.createElement('div')
@@ -63,24 +66,92 @@ const addSecEvent = () => {
     image1.src = "./icons/add_circle_white_24dp.svg"
     image1.classList.add('add')
     image1.classList.add('image1')
-    image1.addEventListener('click', () => {
-        options()
+    const left = () => {
+        
+        const div1 = document.createElement('div')
+        div1.classList.add('singleBlock')
+        div1.classList.add('leftBlock')
+        div1.style.top = `${leftTop}px`
+        leftTop += 155;
 
-        // const secDiv = document.createElement('div')
-        // const clonePara = mainPara.cloneNode(true)
-        // // const cloneLine = mainLine.cloneNode(false)
-        // // const cloneImage = mainImage.cloneNode(false)
-        // secDiv.append(clonePara)
-        // // secDiv.append(cloneLine)
-        // // secDiv.append(cloneImage)
-        // div.append(secDiv)
-    })
+        const para = document.createElement('p')
+        para.innerText = "Start"
+        const firstLine = document.createElement('div')
+        firstLine.classList.add('verticalLine')
+        const secondLine = document.createElement('div')
+        secondLine.classList.add('verticalLine')
+        const image = document.createElement('img')
+        image.src = "./icons/add_circle_white_24dp.svg"
+        image.classList.add('add')
+        image.addEventListener('click', left)
+
+        const delBtn = document.createElement('img')
+        delBtn.src = "./icons/delete_white_24dp.svg"
+        delBtn.classList.add('delete')
+        delBtn.classList.add('hidden')
+        delBtn.addEventListener('click', () => {
+            delBtn.parentElement.remove()
+        })
+        div1.addEventListener('mouseover', () => {
+            delBtn.classList.remove('hidden')
+        })
+        div1.addEventListener('mouseleave', () => {
+            delBtn.classList.add('hidden')
+        })
+
+        div1.append(delBtn)
+        div1.append(firstLine)
+        div1.append(para)
+        div1.append(secondLine)
+        div1.append(image)
+        div.append(div1)
+    }
+    image1.addEventListener('click', left)
     const image2 = document.createElement('img')
     image2.src = "./icons/add_circle_white_24dp.svg"
     image2.classList.add('add')
     image2.classList.add('image2')
-    image2.addEventListener('click', options)
-    
+    const right = () => {
+        const div1 = document.createElement('div')
+        div1.classList.add('singleBlock')
+        div1.classList.add('rightBlock')
+        div1.style.top = `${rightTop}px`
+        rightTop += 155;
+
+        const para = document.createElement('p')
+        para.innerText = "Start"
+        const firstLine = document.createElement('div')
+        firstLine.classList.add('verticalLine')
+        const secondLine = document.createElement('div')
+        secondLine.classList.add('verticalLine')
+        const image = document.createElement('img')
+        image.src = "./icons/add_circle_white_24dp.svg"
+        image.classList.add('add')
+        image.addEventListener('click', right)
+
+        const delBtn = document.createElement('img')
+        delBtn.src = "./icons/delete_white_24dp.svg"
+        delBtn.classList.add('delete')
+        delBtn.classList.add('hidden')
+        delBtn.addEventListener('click', () => {
+            delBtn.parentElement.remove()
+        })
+        div1.addEventListener('mouseover', () => {
+            delBtn.classList.remove('hidden')
+        })
+        div1.addEventListener('mouseleave', () => {
+            delBtn.classList.add('hidden')
+        })
+
+        div1.append(delBtn)
+        div1.append(firstLine)
+        div1.append(para)
+        div1.append(secondLine)
+        div1.append(image)
+        div.append(div1)
+    }
+    image2.addEventListener('click', right )
+
     div.append(fLine)
     div.append(horizLine)
     div.append(sLine)
@@ -89,11 +160,10 @@ const addSecEvent = () => {
     div.append(image2)
 
     mainContainer.append(div)
-    
-
-
 }
 
+
+// This will give you option for one element or two element
 const options = () => {
     const div = document.createElement('div')
     div.classList.add('doubleBlock')
@@ -112,7 +182,7 @@ const options = () => {
     div.append(fSpan)
     div.append(sSpan)
     mainContainer.append(div)
-    // addBtn.removeEventListener('click', options) // this is only working for first button.
+    addBtn.removeEventListener('click', options) // this is only working for first button.
 }
 
 

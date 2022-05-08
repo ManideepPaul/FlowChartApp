@@ -31,6 +31,18 @@
     background-color: #ffffff;
 }
 
+.leftBlock {
+    position: absolute;
+    /* top: 105px; */
+    left: -42px;
+}
+
+.rightBlock {
+    position: absolute;
+    /* top: 105px; */
+    right: -42px;
+}
+
 .doubleBranch {
     display: flex;
     flex-direction: column;
