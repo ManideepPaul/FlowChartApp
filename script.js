@@ -90,6 +90,7 @@ const addSecEvent = () => {
         delBtn.classList.add('delete')
         delBtn.classList.add('hidden')
         delBtn.addEventListener('click', () => {
+            leftTop -= 155;
             delBtn.parentElement.remove()
         })
         div1.addEventListener('mouseover', () => {
@@ -134,6 +135,7 @@ const addSecEvent = () => {
         delBtn.classList.add('delete')
         delBtn.classList.add('hidden')
         delBtn.addEventListener('click', () => {
+            rightTop -= 155;
             delBtn.parentElement.remove()
         })
         div1.addEventListener('mouseover', () => {
